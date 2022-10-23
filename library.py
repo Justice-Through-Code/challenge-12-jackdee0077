@@ -16,16 +16,17 @@ class Library():
         """Return the number of books currently in the booklist"""
         return len(self.books)
 
-    def remove_title(self):
+    def remove_title(self,title):
         """Remove a book from the book list"""
-        for novel in self.books:
+        for i,novel in enumerate(self.books):
             if novel.title == title:
-                self.books.remove(novel)
-            return self.books
+                self.books.pop(i)
+                return
+            
 
     def display_books(self):
         for novel in self.books:
-            print(f'{novel.title} -  {novel.author}')
+            print(f'{novel.title} - {novel.author}')
 
 
     def is_empty(self):
